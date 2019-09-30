@@ -7,4 +7,12 @@ class Blog(models.Model):
     summary = models.TextField(max_length=300)
     image = models.ImageField(upload_to='images/')
 
+    def __str__(self):
+        return self.title
+
+    def red_summary(self):
+        return self.summary[:20]
+
+    def red_date(self):
+        return self.date.strftime('%b %d %Y')
 
