@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>Qazi Ihtesham</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -65,23 +65,31 @@
             <img src="{% static 'ihtesham.jpg' %}" />
         </div>
     </section>
-
+    <div class="text-center">
+        <h1> My Projects </h1>
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
                 {% for job in jobs.all %}
-                <div class="col-md-4">
+                <div class="col-md-4 card h-100">
                     <div class="card mb-4 shadow-sm">
                         <img class="card-img-top" width="100%" height="225" src="{{ job.image.url }}" />
-                        <div class="card-body">
-                            <p class="card-text">{{ job.summary }}.</p>
+                        <div class="card-body ">
+                            <h4>{{ job.title }}</h4>
+                            <p class="card-text">{{ job.red_summary }}.</p>
                         </div>
+
+                        <div class="btn-group href">
+                            <a href="{% url 'allblogs' %}" type="button" class="btn btn-sm btn-outline-secondary" >View</a>
+                        </div>
+
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
+        </div>
 
 </main>
 

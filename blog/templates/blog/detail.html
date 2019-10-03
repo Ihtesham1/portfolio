@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>{{ details.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -17,6 +17,12 @@
 
 
     <style>
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -58,8 +64,11 @@
     <h1 class="text-center pt-5">{{ details.title }}</h1>
         <p class="text-center">{{ details.date }}</p>
         <hr />
-        <img class=".img-fluid" src="{{ details.image.url }}" height="250" width="400"/>
+        <img class=".img-fluid center" src="{{ details.image.url }}" height="250" width="400"/>
+        <br/>
+        <br />
         <p>{{ details.summary }}</p>
+
 
         </div>
 
@@ -67,9 +76,6 @@
 
 <footer class="text-muted">
     <div class="container text-center">
-        <p class="float-right">
-            <a href="#">Back to top</a>
-        </p>
         <p>&copy; Qazi Ihtesham {% now "Y" %}</p>
     </div>
 </footer>
