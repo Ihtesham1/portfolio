@@ -17,6 +17,14 @@
 
 
     <style>
+        .clearfix {
+        overflow: auto;
+        }
+
+       .img {
+         float: left;
+        }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -59,12 +67,17 @@
     <br /><br />
     <h1>Latest blogs</h1>
         <hr />
+
         {% for blog in blogs.all %}
 
-        <a href="{% url 'details' blog.id %}"><H1>{{ blog.title }}</H1></a>
-        <p>{{ blog.red_date }}</p>
-        <img class=".img-fluid" src="{{ blog.image.url }}" height="200" width="200"/>
-        <p>{{ blog.red_summary }}</p>
+
+        <div class="clearfix">
+            <img class="img" src="{{ blog.image.url }}" width="170" height="170">
+            <a href="{% url 'details' blog.id %}"><H1>{{ blog.title }}</H1></a>
+            <p>{{ blog.red_date }}</p>
+            <p>{{ blog.red_summary }}</p>
+        </div>
+        <br />
 
 
 
